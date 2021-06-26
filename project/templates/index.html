@@ -1,0 +1,72 @@
+<!doctype html>
+{%load static%}
+{% include 'star/messages.html' %}
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>BasePage</title>
+        <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+        <link rel="stylesheet" href="{%static 'css/style.css'%}">
+        <title>Pdfs | {% block title %} {% endblock title %} </title>
+    </head> 
+    <body>
+    <div class="container mt-3">
+    <div class="alert alert-warning" role="alert">
+        MINI PROJECT
+    </div>
+<br>
+    <form method="post" action="/">{% csrf_token %}
+
+        <div class="form-group">
+          <label>ID</label>
+          <input type="number" class="form-control" id="id" name="id" placeholder="enter id">
+        </div>
+
+        <div class="form-group">
+          <label >USN</label>
+          <input type="text" class="form-control" id="usn" name="usn" placeholder="enter usn">
+        </div>
+
+        <div class="form-group">
+          <label>NAME</label>
+          <input type="text" class="form-control" id="name" name="name" placeholder="enter name">
+        </div>
+
+        <div class="form-group">
+          <label>SEM</label>
+          <input type="number" class="form-control" id="sem" name="sem" placeholder="enter sem">
+        </div>
+
+        <div class="form-group">
+          <label>PHONE</label>
+          <input type="number" class="form-control" id="phone" name="phone" placeholder="enter phone number">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+
+        <button type="submit" class="btn btn-danger">Submit</button>
+      </form>
+      <br> 
+
+      <h1> end of the form</h1>
+     
+    </div>
+    <div class="container">
+      {% block content %}
+      {% endblock content %}
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
